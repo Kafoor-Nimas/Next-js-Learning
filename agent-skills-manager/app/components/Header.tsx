@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -7,19 +8,18 @@ export default function Header() {
         <a className="btn btn-ghost text-xl">daisyUI</a>
 
         <ul className="menu menu-horizontal p-0">
-            <li>
-                <a href="/skills">Skills</a>
-            </li>
-            <li>
-                <a href="/about">About</a>
-            </li>
-            <li>
-                <a href="/login">Login</a>
-            </li>
-            <li>
-                <a href="/register">Register</a>
-            </li>
-
+          <li>
+            <Link href="/skills">Skills</Link>
+          </li>
+          <li>
+            <Link href="/about">About</Link>
+          </li>
+          <li>
+            <Link href="/login">Login</Link>
+          </li>
+          <li>
+            <Link href="/register">Register</Link>
+          </li>
         </ul>
       </div>
       <div className="flex-none">
