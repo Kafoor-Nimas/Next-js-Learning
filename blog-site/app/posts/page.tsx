@@ -1,10 +1,19 @@
+import RecentlyViewedPosts from "@/components/RecentlyViewedPosts";
+import { getPosts } from "@/lib/utils";
 import Link from "next/link";
+import { Suspense } from "react";
+
+type Post = {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+};
+
+
 
 export default async function PostsPage() {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
-    cache: "force-cache", // or next: { revalidate: 3600 } to revalidate hourly
-  });
-  const posts = await response.json();
+  const posts = await getPosts();
   return (
     <div className="space-y-8">
       <section className="space-y-4">
@@ -12,7 +21,7 @@ export default async function PostsPage() {
           Posts
         </h1>
         <ul className="space-y-3">
-          {posts.slice(0, 5).map((post) => (
+          {posts.slice(0, 5).map((post: Post) => (
             <li key={post.id}>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <Link
@@ -25,6 +34,10 @@ export default async function PostsPage() {
             </li>
           ))}
         </ul>
+
+        <Suspense fallback={<p>Loading recently viewed posts...</p>}>
+          <RecentlyViewedPosts />
+        </Suspense>
       </section>
     </div>
   );
