@@ -19,18 +19,25 @@ export const metadata: Metadata = {
   description: "Personal portfolio built with Next.js & Tailwind CSS",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body
-        className="min-h-full flex flex-col bg-zinc-50 text-zinc-900 antialiased "
+        className="flex min-h-full flex-col bg-zinc-50 text-zinc-900 antialiased"
         suppressHydrationWarning
       >
         <Header />
-        <main className="min-h-screen max-w-4xl  px-6 py-12">{children}</main>
+        
+        <main className="mx-auto w-full max-w-4xl flex-1 px-4 sm:px-6 py-8 sm:py-12">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
