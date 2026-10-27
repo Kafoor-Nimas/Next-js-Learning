@@ -1,3 +1,4 @@
+import ExperienceTimeline from "@/components/ExperienceTimeline";
 import ProjectCard from "@/components/ProjectCard";
 import Image from "next/image";
 import Link from "next/link";
@@ -91,6 +92,9 @@ export default function Home() {
           />
         </div>
       </section>
+
+      {/* Experience Section */}
+      <ExperienceTimeline />
     </div>
   );
 }
