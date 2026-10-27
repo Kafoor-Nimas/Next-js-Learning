@@ -1,3 +1,4 @@
+import ProjectCard from "@/components/ProjectCard";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -67,6 +68,27 @@ export default function Home() {
               {skill}
             </span>
           ))}
+        </div>
+      </section>
+
+      {/* Featured Projects Grid */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-bold">Featured Work</h2>
+        <div className="grid gap-6 sm:grid-cols-2">
+          <ProjectCard
+            title="Internship Management Portal"
+            description="MERN-stack application featuring RBAC authentication, Stripe Checkout, and Nodemailer email triggers."
+            techStack={["React", "Node.js", "Express", "MongoDB", "Stripe"]}
+            githubUrl="https://github.com/Kafoor-Nimas/Apptron-Week-3"
+            liveUrl="https://github.com/Kafoor-Nimas/Apptron-Week-3"
+            featured
+          />
+          <ProjectCard
+            title="Next.js Personal Portfolio"
+            description="Modern, accessible portfolio site built with Next.js App Router and Tailwind CSS v4."
+            techStack={["Next.js", "TypeScript", "Tailwind CSS"]}
+            githubUrl="https://github.com/Kafoor-Nimas"
+          />
         </div>
       </section>
     </div>
