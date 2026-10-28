@@ -62,7 +62,7 @@ export default function ProjectsPage() {
         </h1>
         <p className="mt-2 text-base text-zinc-600 max-w-2xl">
           A showcase of full-stack web applications, AI integrations, and user
-          interfaces I've built.
+          interfaces I&apos;ve built.
         </p>
       </div>
 
